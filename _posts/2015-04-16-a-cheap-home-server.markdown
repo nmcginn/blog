@@ -31,6 +31,6 @@ Because I already have network storage available, I decided to set up dedicated 
 ### Final Result
 What this looks like in the end is pretty boring actually:
 
-{<1>}![Remote Desktop Screenshot](https://i.imgur.com/1d3arJ5.png)
+![Remote Desktop Screenshot](https://i.imgur.com/1d3arJ5.png)
 
 The fact that this screenshot is boring makes me really happy. We live in an age where creating a server with multiple virtual servers is trivially easy. The layers of complexity here between the hardware and the software kindof melt away from an end-user perspective and this lets me set something up really quickly. After some updating, hardening, and monitoring, this became a really easy and satisfying setup. I love the fact that we live in an age where I can lie to the hardware (as [Scott Hanselman said](https://www.youtube.com/watch?v=UzyoT4DziQ4)), and do whatever I want virtually. With commodity hardware I can have several enterprise-grade (software wise) servers to play with. Talk about good times to be a techie.

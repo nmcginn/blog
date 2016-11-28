@@ -51,7 +51,7 @@ My little Azure server for test 1 was a Standard D1 instance, which translates t
 
 Something interesting happens here, processing the requests is still rather snappy with 10,000 requests but the client seems to have some issues connecting. Maybe nginx can't handle the connections quickly enough? But nginx already had 4 worker processes, but we only have 1 node server here. Let's rerun the test with top and see if anything interesting pops up:
 
-{<1>}![Node struggling](https://i.imgur.com/d1KNoX3.png)
+![Node struggling](https://i.imgur.com/d1KNoX3.png)
 
 Oh yeah, that's what I'm talking about. It makes sense though, nginx has several processes which means it can spread the work out a little more evenly, but node only has the one. We have four cores, so let's try it with four node instances!
 
