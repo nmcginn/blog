@@ -416,6 +416,10 @@ Small Device Styles
     font-size:14px;
   }
 
+  #sidebar-small {
+    font-size: 1.5em;
+  }
+
   #downloads {
     display: none;
   }
@@ -426,7 +430,7 @@ Small Device Styles
   }
 
   #project_title {
-  font-size: 32px;
+    font-size: 32px;
   }
 
   h1 {
