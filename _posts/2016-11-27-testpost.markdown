@@ -1,8 +1,0 @@
----
-layout: default
-title: "Test Post"
----
-
-### This is a test post
-
-To see if gh pages picks it up.
