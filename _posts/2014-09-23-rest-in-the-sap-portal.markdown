@@ -1,6 +1,7 @@
 ---
 layout: default
 title: REST in the SAP Portal
+category: 2014
 ---
 
 ### The Problem

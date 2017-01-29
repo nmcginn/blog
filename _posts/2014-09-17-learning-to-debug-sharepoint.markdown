@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Learning to debug SharePoint
+category: 2014
 ---
 
 ### The Problem

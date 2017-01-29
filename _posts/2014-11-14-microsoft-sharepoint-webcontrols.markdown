@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Microsoft.SharePoint.WebControls
+category: 2014
 ---
 
 I was asked to write a custom web part for SharePoint 2013, which seemed like a fun project. Getting started, I've got Visual Studio on a SharePoint sandbox server and I'm ready to get coding. When creating the web part, I come across this dialog:

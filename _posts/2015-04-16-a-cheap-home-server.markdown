@@ -1,6 +1,7 @@
 ---
 layout: default
 title: A Cheap Home Server
+category: 2015
 ---
 
 ### Preface

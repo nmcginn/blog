@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Deep Linking in IE
+category: 2014
 ---
 
 A requirement came up for some folks to be able to link directly to a page in my new web app. Of course I had no problem with this, but Internet Explorer sure did. This application is an Angular SPA, which means it actually uses AJAX to populate the page content. After some initial investigation, it turns out that the people downstairs were using the correct URL, but IE was transforming it. When copied into the browser window directly, you get this:
