@@ -405,7 +405,7 @@ Full-Width Styles
 Small Device Styles
 *******************************************************************************/
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 12000px) {
   #sidebar {
     display: none;
   }
