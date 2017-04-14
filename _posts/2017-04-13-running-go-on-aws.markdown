@@ -33,7 +33,7 @@ However, after trying to run this in docker again, I _still_ couldn't get my app
 
 ### Managing credentials
 
-Typically, my team will use environment variables for for managing credentials. This has the advantage of being easy to set up on both a developer's environment and in deployments. I typically want to supply these to the image I deploy at build time, so it was pretty straightforward to include these in my Dockerfile and fetch them from Amazon KMS in my build script for stashbot & Jenkins to pick up. This is the reason for the ARG & ENV commands in the Dockerfile above.
+Typically, my team will use environment variables for managing credentials. This has the advantage of being easy to set up on both a developer's environment and in deployments. I typically want to supply these to the image I deploy at build time, so it was pretty straightforward to include these in my Dockerfile and fetch them from Amazon KMS in my build script for stashbot & Jenkins to pick up. This is the reason for the ARG & ENV commands in the Dockerfile above.
 
 The issue came about with the unique setup my company has for build automation. They use a custom script to build & package Docker images on Jenkins, which doesn't pass any kind of `--build-arg` flag. This means that my prior approach for passing credentials won't cut it, unless I want to maintain a custom version of their deployment script (and it's _quite_ a script, so I decided to pass on that idea). Once again, I turned to the go toolchain for a solution.
 
