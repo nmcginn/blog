@@ -60,4 +60,4 @@ env CGO_ENABLED=0 go build -ldflags="-X main.DB_HOST=$DB_HOST -X main.DB_PW=$DB_
 
 These problems are great examples of the love-hate relationship I have with go. Having a statically linked binary that builds incredibly fast is _awesome_, but with Cgo it isn't _really_ statically linked. Little things like that can drive developers crazy. But once I got few the first few hurdles, I have a project that compiles (and _cross-compiles_) within a few seconds and at runtime is exceptionally low-overhead.
 
-If I'm being completely honest... that relationship with go is 90-10 love-hate though. <3
+If I'm being completely honest... that relationship with go is 90-10 love-hate. <3
