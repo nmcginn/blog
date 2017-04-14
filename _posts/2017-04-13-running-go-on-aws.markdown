@@ -10,7 +10,7 @@ My organization has recently moved to Amazon ECS for deploying services, and my 
 
 ### Deploying a go binary to ECS
 
-Our first major service on the new deployment stack was fairly straightforward, the beauty of go is that we can compile it and our dockerfile is dead simple. This was my original Dockerfile:
+Our first major service on the new deployment stack was fairly straightforward, the beauty of go is that we can compile our project ahead of time and our dockerfile is dead simple. This was my original Dockerfile:
 
 
 ```
