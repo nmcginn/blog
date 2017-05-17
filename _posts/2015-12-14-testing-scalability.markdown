@@ -7,7 +7,7 @@ category: 2015
 I was inspired by [this Youtube video](http://www.youtube.com/watch?v=FJrs0Ar9asY) to learn how to do a little benchmarking. All the servers are running on Microsoft Azure. The benchmark server is in US-Central while the web servers are all in US-East, because honestly most end users aren't sitting in our data center are they? Note: I'm just diving into tests and writing this blog post as I go. I'm not an expert, I'm just playing around and discovering as I go.
 
 ### Test 1: Simple local caching
-The [first test](https://github.com/odstderek/nginxtest/tree/aa4d9109a0cbd63f154a19f39af80edb4a2cbddc) was the simplest possible setup: everything on 1 server, no caching, simple passthrough from nginx to a single node server.
+The [first test](https://github.com/nmcginn/nginxtest/tree/aa4d9109a0cbd63f154a19f39af80edb4a2cbddc) was the simplest possible setup: everything on 1 server, no caching, simple passthrough from nginx to a single node server.
 
     Percentage of the requests served within a certain time (ms)
       50%    113
@@ -20,7 +20,7 @@ The [first test](https://github.com/odstderek/nginxtest/tree/aa4d9109a0cbd63f154
       99%    260
      100%    304 (longest request)
 
-For 100 concurrent requests, that actually makes me pretty happy. Our longest request was just barely over 300ms. However, a [slight tweak](https://github.com/odstderek/nginxtest/commit/4ec501f97da7af1c214f1b399da282276f4afb66) to the nginx config yields the following:
+For 100 concurrent requests, that actually makes me pretty happy. Our longest request was just barely over 300ms. However, a [slight tweak](https://github.com/nmcginn/nginxtest/commit/4ec501f97da7af1c214f1b399da282276f4afb66) to the nginx config yields the following:
 
     Percentage of the requests served within a certain time (ms)
       50%    116
@@ -120,4 +120,4 @@ By load balancing our requests from 1 node server to 3, we cut the test time dow
 
 ### This was stupidly fun
 
-With minimal time investment, I was able to perform testing and benchmarking involving 5 servers. I didn't have to set up the network, or route any cables. I simply told Azure what I wanted and I got it. As someone who's never worked with load balancers or setting up a simple multi-server infrastructure, this was a really cool test. I would like to revisit the test and look into moving things back to 1 beefy server versus several smaller ones, and trying different load balancing tools, but this blog post is already eye-shatteringly long. The full test results are [available on GitHub](https://github.com/odstderek/nginxtest/tree/master/tests). Later taters.
+With minimal time investment, I was able to perform testing and benchmarking involving 5 servers. I didn't have to set up the network, or route any cables. I simply told Azure what I wanted and I got it. As someone who's never worked with load balancers or setting up a simple multi-server infrastructure, this was a really cool test. I would like to revisit the test and look into moving things back to 1 beefy server versus several smaller ones, and trying different load balancing tools, but this blog post is already eye-shatteringly long. The full test results are [available on GitHub](https://github.com/nmcginn/nginxtest/tree/master/tests). Later taters.
