@@ -186,6 +186,7 @@ code {
 pre code {
   display: block;
   box-shadow: none;
+  font-size: 1em;
 }
 
 blockquote {
@@ -266,7 +267,7 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 640px;
+  max-width: 90%;
   padding: 20px 10px;
   margin: 0 auto;
 }
