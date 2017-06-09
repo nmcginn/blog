@@ -385,6 +385,22 @@ Full-Width Styles
   z-index: 1;
 }
 
+#sidebar-small a {
+  color: #ACD04A;
+}
+
+#sidebar-small a:hover {
+  color: #6ED4DD;
+}
+
+#sidebar-small a:active {
+  color: #6ED4DD;
+}
+
+#sidebar-small a:visited {
+  color: #C8426C;
+}
+
 #main-wrap {
   transition: margin-left 0.5s;
 }
