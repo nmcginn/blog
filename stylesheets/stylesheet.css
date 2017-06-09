@@ -403,11 +403,8 @@ Full-Width Styles
 
 #close-sidebar {
   position: absolute;
-  color: white;
   top: 0;
-  right: 5px;
-  font-size: xx-large;
-  font-weight: 700;
+  right: 0;
   cursor: pointer;
 }
 
@@ -420,14 +417,20 @@ Full-Width Styles
 }
 
 .small-device-nav {
+  background: -webkit-linear-gradient(right top, rgba(39, 40, 34, 1), rgba(39, 40, 34, 0.5));
+  background: -o-linear-gradient(bottom left, rgba(39, 40, 34, 1), rgba(39, 40, 34, 0.5));
+  background: -moz-linear-gradient(bottom left, rgba(39, 40, 34, 1), rgba(39, 40, 34, 0.5));
+  background: linear-gradient(to bottom left, rgba(39, 40, 34, 1), rgba(39, 40, 34, 0.5));
   display: none;
-  text-align: right;
+  width: 42px;
+  height: 42px;
 }
 
 .small-device-nav img {
   border: 0;
-  box-shadow: none;
   margin: 0;
+  padding: 5px;
+  box-shadow: none;
   max-height: 32px;
   max-width: 32px;
 }
@@ -451,14 +454,15 @@ Small Device Styles
     font-size: 1.5em;
   }
 
+  .small-device-nav {
+    width: 58px;
+    height: 58px;
+  }
+
   #close-sidebar img {
     max-width: 48px;
     max-height: 48px;
-  }
-
-  #close-sidebar {
-    font-size: 2em;
-    margin-right: 10px;
+    padding: 5px;
   }
 }
 
