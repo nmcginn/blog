@@ -389,16 +389,16 @@ Full-Width Styles
   color: #ACD04A;
 }
 
-#sidebar-small a:hover {
-  color: #6ED4DD;
-}
-
 #sidebar-small a:active {
   color: #6ED4DD;
 }
 
 #sidebar-small a:visited {
   color: #C8426C;
+}
+
+#sidebar-small a:hover {
+  color: #6ED4DD;
 }
 
 #main-wrap {
