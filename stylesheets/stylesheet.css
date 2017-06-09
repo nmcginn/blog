@@ -455,13 +455,13 @@ Small Device Styles
   }
 
   .small-device-nav {
-    width: 58px;
-    height: 58px;
+    width: 74px;
+    height: 74px;
   }
 
   #close-sidebar img {
-    max-width: 48px;
-    max-height: 48px;
+    max-width: 64px;
+    max-height: 64px;
     padding: 5px;
   }
 }
