@@ -35,6 +35,10 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+html {
+  background-color: #272822;
+}
+
 ol, ul {
   list-style: none;
 }
@@ -369,24 +373,24 @@ Full-Width Styles
   padding-top: 40px;
 }
 
-#sidebar
-{
-    position:absolute;
-    float:left;
-    width: 300px;
-    left:0;
-    top:250px;
-    bottom:0;
-    min-height: 100%;
+#sidebar-small {
+  background-color: #272822;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: 0.5s;
+  display: none;
+  padding: 20px 0 20px 20px !important;
+  z-index: 1;
 }
 
-#sidebar-small {
-  display: none;
-  padding: 10px 0 20px 0 !important;
+#main-wrap {
+  transition: margin-left 0.5s;
 }
 
 #footer_wrap {
-  background: #212121;
+  background: #272822;
 }
 
 .small-device-nav {
