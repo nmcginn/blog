@@ -382,6 +382,8 @@ Full-Width Styles
   transition: 0.5s;
   display: none;
   padding: 40px 0 20px 20px !important;
+  width: 25%;
+  min-width: 300px;
   z-index: 1;
 }
 
@@ -446,13 +448,21 @@ Small Device Styles
   }
 }
 
+@media screen and (min-width: 480px) {
+  #sidebar-small {
+    font-size: 1.5em;
+    width: 40%;
+    min-width: 300px;
+  }
+
+  #close-sidebar {
+    font-size: 2em;
+  }
+}
+
 @media screen and (max-width: 480px) {
   body {
     font-size:14px;
-  }
-
-  #sidebar-small {
-    font-size: 1.5em;
   }
 
   #downloads {
