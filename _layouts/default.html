@@ -9,14 +9,24 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/stylesheet.css">
     <link rel="icon" type="image/x-icon" href="/images/whiskey.ico">
     <script type="text/javascript">
+      var sidebarDisplayed = false;
       function showHideElement(id) {
         var nav = document.getElementById(id);
         var main = document.getElementById('main-wrap');
-        if (nav.style.display !== 'none' && nav.style.display !== '') {
-          nav.style.display = 'none';
+        if (sidebarDisplayed) {
+          nav.style.width = '0';
+          nav.style.minWidth = '0';
+          nav.style.padding = '0';
+        } else if (window.screen.width <= 480) {
+          nav.style.width = '40%';
+          nav.style.minWidth = '300px';
+          nav.style.padding = '60px 0 20px 20px';
         } else {
-          nav.style.display = 'block';
+          nav.style.width = '25%';
+          nav.style.minWidth = '300px';
+          nav.style.padding = '60px 0 20px 20px';
         }
+        sidebarDisplayed = !sidebarDisplayed;
       }
     </script>
 
@@ -26,7 +36,9 @@
   <body>
 
     <div id="sidebar-small">
-      <div id="close-sidebar" onclick="showHideElement('sidebar-small')">X</div>
+      <div id="close-sidebar" class="small-device-nav" onclick="showHideElement('sidebar-small')">
+        <img style="cursor:pointer" src="/images/hamburger.png" />
+      </div>
       {% for category in site.categories reversed %}
       <div style="color:white;font-weight:700">{{category | first}}</div>
         {% for posts in category %}
@@ -46,10 +58,6 @@
 
             <h1 id="project_title">nmcginn.com</h1>
             <h2 id="project_tagline">clever tagline here</h2>
-
-            <div class="small-device-nav" onclick="showHideElement('sidebar-small')">
-              <img style="cursor:pointer" src="/images/hamburger.png" />
-            </div>
 
           </header>
       </div>

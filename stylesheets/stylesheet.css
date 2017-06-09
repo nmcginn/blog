@@ -380,10 +380,8 @@ Full-Width Styles
   top: 0;
   right: 0;
   transition: 0.5s;
-  display: none;
-  padding: 40px 0 20px 20px !important;
-  width: 25%;
-  min-width: 300px;
+  padding: 0;
+  width: 0;
   z-index: 1;
 }
 
@@ -448,15 +446,19 @@ Small Device Styles
   }
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-device-width: 480px) {
   #sidebar-small {
     font-size: 1.5em;
-    width: 40%;
-    min-width: 300px;
+  }
+
+  #close-sidebar img {
+    max-width: 48px;
+    max-height: 48px;
   }
 
   #close-sidebar {
     font-size: 2em;
+    margin-right: 10px;
   }
 }
 
