@@ -381,7 +381,7 @@ Full-Width Styles
   right: 0;
   transition: 0.5s;
   display: none;
-  padding: 20px 0 20px 20px !important;
+  padding: 40px 0 20px 20px !important;
   z-index: 1;
 }
 
@@ -399,6 +399,16 @@ Full-Width Styles
 
 #sidebar-small a:hover {
   color: #6ED4DD;
+}
+
+#close-sidebar {
+  position: absolute;
+  color: white;
+  top: 0;
+  right: 5px;
+  font-size: xx-large;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 #main-wrap {

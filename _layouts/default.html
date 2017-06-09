@@ -14,11 +14,10 @@
         var main = document.getElementById('main-wrap');
         if (nav.style.display !== 'none' && nav.style.display !== '') {
           nav.style.display = 'none';
-          main.style.width = '100%';
         } else {
           nav.style.display = 'block';
           nav.style.width = '25%';
-          main.style.width = '75%';
+          nav.style.minWidth = '300px';
         }
       }
     </script>
@@ -29,6 +28,7 @@
   <body>
 
     <div id="sidebar-small">
+      <div id="close-sidebar" onclick="showHideElement('sidebar-small')">X</div>
       {% for category in site.categories reversed %}
       <div style="color:white;font-weight:700">{{category | first}}</div>
         {% for posts in category %}
@@ -50,7 +50,7 @@
             <h2 id="project_tagline">clever tagline here</h2>
 
             <div class="small-device-nav" onclick="showHideElement('sidebar-small')">
-              <img src = "/images/hamburger.png" />
+              <img style="cursor:pointer" src="/images/hamburger.png" />
             </div>
 
           </header>
