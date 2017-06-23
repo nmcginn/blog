@@ -5,6 +5,6 @@ rvm:
 - 2.1.1
 
 install:
-  - gem install jekyll bundler
+  - yes | gem install jekyll bundler
   - bundle exec jekyll build
 
