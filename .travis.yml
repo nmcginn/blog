@@ -6,5 +6,5 @@ rvm:
 
 install:
   - yes | gem install jekyll
-  - bundle exec jekyll build
+  - jekyll build
 
