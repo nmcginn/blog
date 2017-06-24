@@ -1,0 +1,15 @@
+sudo: false
+language: ruby
+cache: bundler
+rvm:
+- 2.2.5
+
+install:
+  - yes | gem install jekyll
+  - jekyll build
+
+deploy:
+  provider: s3
+  bucket: "s3://nmcginn.com/"
+  local_dir: _site
+
