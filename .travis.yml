@@ -11,5 +11,6 @@ install:
 deploy:
   provider: s3
   bucket: "s3://nmcginn.com/"
+  skip_cleanup: true
   local_dir: _site
 
