@@ -8,3 +8,8 @@ install:
   - yes | gem install jekyll
   - jekyll build
 
+deploy:
+  provider: s3
+  bucket: "s3://nmcginn.com/"
+  local_dir: _site
+
