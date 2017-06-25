@@ -1,91 +1,56 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Adventures of a unix hacker trapped in a data scientist's body">
+    <!-- [[! Page Meta ]] -->
+    <title>{% if page.title %}{{ page.title }}{% elsif site.name %}{{ site.name }}{% endif %}</title>
+    <meta name="description" content="{{ site.name }} - {{ site.description }}" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/stylesheet.css">
-    <link rel="icon" type="image/x-icon" href="/images/whiskey.ico">
-    <script type="text/javascript">
-      var sidebarDisplayed = false;
-      function showHideElement(id) {
-        var nav = document.getElementById(id);
-        var main = document.getElementById('main-wrap');
-        if (sidebarDisplayed) {
-          nav.style.width = '0';
-          nav.style.minWidth = '0';
-          nav.style.padding = '0';
-        } else if (window.screen.width <= 480) {
-          nav.style.width = '40%';
-          nav.style.minWidth = '300px';
-          nav.style.padding = '60px 0 20px 20px';
-        } else {
-          nav.style.width = '25%';
-          nav.style.minWidth = '300px';
-          nav.style.padding = '60px 0 20px 20px';
-        }
-        sidebarDisplayed = !sidebarDisplayed;
-      }
-    </script>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>nmcginn.com {% if page.title %} - {{page.title}}{% endif %}</title>
-  </head>
+    <link rel="shortcut icon" href="{{ site.baseurl }}assets/images/favicon.ico" >
 
-  <body>
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}assets/css/syntax.css" />
 
-    <div id="sidebar-small">
-      <div id="close-sidebar" class="small-device-nav" onclick="showHideElement('sidebar-small')">
-        <img style="cursor:pointer" src="/images/hamburger.png" />
-      </div>
-      {% for category in site.categories reversed %}
-      <div style="color:white;font-weight:700">{{category | first}}</div>
-        {% for posts in category %}
-          {% for post in posts reversed %}
-            <div style="margin-left:10px">
-              <a href="{{ post.url }}">{{ post.title }}</a>
-            </div>
-          {% endfor %}
-        {% endfor %}
-      {% endfor %}
-    </div>
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
-    <div class="main-wrap" id="main-wrap">
-      <!-- HEADER -->
-      <div id="header_wrap" class="outer">
-          <header class="inner">
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+    {% include head.html %}
 
-            <h1 id="project_title">nmcginn.com</h1>
-            <h2 id="project_tagline">clever tagline here</h2>
+</head>
+<body class="{% if paginator.page > 1 %}paged archive-template{% elsif page.class %}{{ page.class }}{% else %}home-template{% endif %} nav-closed">
 
-          </header>
-      </div>
+    {% include navigation.html %}
 
-      <!-- MAIN CONTENT -->
-      <div id="main_content_wrap" class="outer">
-          <section id="main_content" class="inner">
-            <span style="position:absolute;right:0;top:0">{{ page.date | date: '%B %d, %Y' }}</span>
-            {{content}}
-          </section>
-      </div> 
-      <!-- FOOTER  -->
-      <div id="footer_wrap" class="outer">
-        <footer class="inner">
-          <p><a href="https://github.com/nmcginn/blog">Find me on GitHub</a></p>
-          <p class="copyright">nmcginn.com © {{ site.time | date: '%Y' }} All rights reserverd.</p>
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        {{ content }}
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="{{ site.baseurl }}">{{ site.name }}</a> &copy; {{  site.time | date: '%Y' }}</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
         </footer>
-      </div>
     </div>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="{{ site.baseurl }}assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}assets/js/index.js"></script>
 
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-55171430-2', 'auto');
-      ga('send', 'pageview');
-    </script>
-  </body>
+    <!-- Add Google Analytics  -->
+    {% include analytics.html %}   
+</body>
 </html>
