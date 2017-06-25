@@ -5,6 +5,7 @@ navigation: True
 categories: Nathan
 subclass: 'post tag-2017'
 tags: 2017
+cover: 'assets/images/servers.jpg'
 ---
 
 # Scalable Data Science - Running R on AWS ECS
