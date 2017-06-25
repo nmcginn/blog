@@ -1,7 +1,10 @@
 ---
-layout: default
+layout: post
 title: Scalable Data Science - Running R on AWS ECS
-category: 2017
+navigation: True
+categories: Nathan
+subclass: 'post tag-2017'
+tags: 2017
 ---
 
 # Scalable Data Science - Running R on AWS ECS

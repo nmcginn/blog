@@ -1,7 +1,10 @@
 ---
-layout: default
+layout: post
 title: Stealing data once you have root
-category: 2017
+navigation: True
+categories: Nathan
+subclass: 'post tag-2017'
+tags: 2017
 ---
 
 ### Managing secure credentials
