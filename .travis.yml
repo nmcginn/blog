@@ -7,6 +7,7 @@ rvm:
 install:
   - bundle install
   - bundle exec jekyll build
+  - find _site -type f -name "*.html" | while read f; do cp "$f" "${f%.html}"; done
 
 deploy:
   provider: s3
