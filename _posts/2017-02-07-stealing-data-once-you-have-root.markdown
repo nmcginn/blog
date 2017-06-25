@@ -15,13 +15,13 @@ At work, a coworker and I were having a discussion about managing secure credent
 
 As the simplest possible test, I fired up a nodejs process and made a variable. This gives me an easy process to attack.
 
-![target process](/images/target_process.png)
+![target process](/assets/images/target_process.png)
 
 ### The "attack"
 
 My approach for this was to use gdb to get a core dump, then find some way to sift through the data. It turns out this is pretty trivial with `gcore`. We can then use `strings` to extract the bits we're interested in.
 
-![attack process](/images/attack_process.png)
+![attack process](/assets/images/attack_process.png)
 
 ### Takeaway
 

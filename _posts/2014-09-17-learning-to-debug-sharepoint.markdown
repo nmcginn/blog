@@ -22,21 +22,23 @@ I, with the help of some support folks at Microsoft, wrote a little bit of custo
 
 My first instinct is "well shit what did I do". A failure in SharePoint would occur when DocAve tried to create a new site collection, and of course my code is being implicated. A few code tweaks and a ton of emails later, this issue is still plaguing us, even though my exceptions have disappeared. The nice folks at AvePoint were convinced that my code was problematic, seeing as it was being called out from DocAve's logs. The problem I had with this theory is the fact that the stacktrace referenced a method whose implementation goes something like this:
 
-	// this is where we need to query AD and grab whatever users we need
-		public static List<string[]> FindUserClaims(string keySearch)
-		{
-				//Assemble the returning info
-				List<string[]> results = new List<string[]>();
-				try
-				{
-			// some junk
-				}
-			catch (Exception ex)
-			{
-				CustomLogger.Log("Exception thrown: " + ex.Message);
-			}
-		return results;
-		}
+{% highlight C# %}
+// this is where we need to query AD and grab whatever users we need
+public static List<string[]> FindUserClaims(string keySearch)
+{
+	//Assemble the returning info
+	List<string[]> results = new List<string[]>();
+	try
+	{
+		// some junk
+	}
+	catch (Exception ex)
+	{
+		CustomLogger.Log("Exception thrown: " + ex.Message);
+	}
+	return results;
+}
+{% endhighlight %}
 		
 Now in this code snippet, I find it hard to fathom *where* exactly this exception is being thrown and not handled. Having stumped AvePoint, we go back to the Microsoft folks. We dig through the ULS logs and DocAve's logs until we finally find something of interest:
 
