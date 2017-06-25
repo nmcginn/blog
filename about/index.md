@@ -7,8 +7,11 @@ logo: 'assets/images/ghost.png'
 current: about
 ---
 
-This is a demo blog for Ghost, it contains dummy content which allows you to click around and see what a Ghost blog running the default theme looks like.
+Hi there~
 
-We use this for testing and for reference!
+My name is Nathan, I'm a software developer and general technical problem solver.
 
-If you'd like to set up your own blog, head on over to [https://ghost.org](https://ghost.org) and sign up.
+There should be some blog posts around here somewhere. Some of them may be worth reading, some may not be.
+
+¯\\\_(ツ)\_/¯
+
