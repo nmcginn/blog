@@ -5,8 +5,8 @@ rvm:
 - 2.2.5
 
 install:
-  - yes | gem install jekyll
-  - jekyll build
+  - bundle install
+  - bundle exec jekyll build
 
 deploy:
   provider: s3
