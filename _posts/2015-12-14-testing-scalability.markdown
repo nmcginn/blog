@@ -1,7 +1,11 @@
 ---
-layout: default
+layout: post
 title: Testing Scalability
-category: 2015
+navigation: True
+categories: Nathan
+subclass: 'post tag-2015'
+tags: 2015
+cover: 'assets/images/nodejs.png'
 ---
 
 I was inspired by [this Youtube video](http://www.youtube.com/watch?v=FJrs0Ar9asY) to learn how to do a little benchmarking. All the servers are running on Microsoft Azure. The benchmark server is in US-Central while the web servers are all in US-East, because honestly most end users aren't sitting in our data center are they? Note: I'm just diving into tests and writing this blog post as I go. I'm not an expert, I'm just playing around and discovering as I go.

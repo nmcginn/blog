@@ -1,7 +1,11 @@
 ---
-layout: default
+layout: post
 title: Running go on AWS ECS
-category: 2017
+navigation: True
+categories: Nathan
+subclass: 'post tag-2017'
+tags: 2017
+cover: 'assets/images/gocode.png'
 ---
 
 # Running a go service on Amazon ECS
@@ -13,7 +17,7 @@ My organization has recently moved to Amazon ECS for deploying services, and my 
 Our first major service on the new deployment stack was fairly straightforward, the beauty of go is that we can compile our project ahead of time and our dockerfile is dead simple. This was my original Dockerfile:
 
 
-```
+{% highlight bash %}
 FROM scratch
 ENV PORT 8080
 
@@ -25,7 +29,7 @@ ENV DB_HOST=$DB_HOST
 COPY my-binary /usr/local/bin/
 
 CMD ["my-binary"]
-```
+{% endhighlight %}
 
 Now from my local machine when building the go binary, I got this error when trying to start the service in docker: `standard_init_linux.go:175: exec user process caused "exec format error"`. After doing a little thinking, I realized that the OS X binary wouldn't run in a linux image. This is easy to fix with go's ability to cross-compile. In the shell script that build our go binary, I simply changed `go build` to be `env GOOS=linux GOARCH=amd64 go build`.
 
@@ -43,20 +47,20 @@ Prior to this, my go code ran a simple `os.Getenv("DB_PW")` as you would expect 
 
 Our Dockerfile is actually simplified from the original environment, given that docker no longer cares about our credentials:
 
-```
+{% highlight bash %}
 FROM scratch
 ENV PORT 8080
 
 COPY my-binary /usr/local/bin/
 
 CMD ["my-binary"]
-```
+{% endhighlight %}
 
 Our go build command on the other hand has gotten quite verbose:
 
-```
+{% highlight bash %}
 env CGO_ENABLED=0 go build -ldflags="-X main.DB_HOST=$DB_HOST -X main.DB_PW=$DB_PW" -v
-```
+{% endhighlight %}
 
 These problems are great examples of the love-hate relationship I have with go. Having a statically linked binary that builds incredibly fast is _awesome_, but with Cgo it isn't _really_ statically linked. Little things like that can drive developers crazy. But once I got few the first few hurdles, I have a project that compiles (and _cross-compiles_) within a few seconds and at runtime is exceptionally low-overhead.
 

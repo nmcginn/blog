@@ -1,7 +1,11 @@
 ---
-layout: default
+layout: post
 title: Scalable Data Science - Running R on AWS ECS
-category: 2017
+navigation: True
+categories: Nathan
+subclass: 'post tag-2017'
+tags: 2017
+cover: 'assets/images/servers.jpg'
 ---
 
 # Scalable Data Science - Running R on AWS ECS
@@ -14,7 +18,7 @@ The initial idea for this implementation was to use AWS Lambda as a large pool o
 
 There's an [outstanding issue on the repository](https://github.com/station-x/lambda-r-survival-stats/issues/2) that has the code for that blog post, due to changes to the amazon linux image. During my exploration of their build process, I was frustrated with the idea of having to run an EC2 instance just to get linux binaries. As amazon linux does have an image in Docker Hub, it was easy enough to replicate the process and solve the binary issue on my local machine:
 
-```
+{% highlight bash %}
 from amazonlinux:latest
 
 RUN yum -y update && yum -y upgrade
@@ -32,7 +36,7 @@ COPY script.sh /
 COPY lambda/handler.py /lambda/
 
 CMD ["/script.sh"]
-```
+{% endhighlight %}
 
 You can then run a [fairly straightforward build script in your container](https://github.com/nmcginn/lambda-r/blob/master/script.sh) which uploads your packaged lambda-ready R & python code to S3.
 
@@ -46,7 +50,7 @@ The docker image looks very similar to the one above, but our script instead inv
 
 It's simple enough to include a script in the repository that starts the ECS task with overridable environment variables which R uses to drive the modeling behavior. The relevant bits being [ecs.run_task](https://boto3.readthedocs.io/en/latest/reference/services/ecs.html#ECS.Client.run_task) with [cloudformation.describe_stack_resources](https://boto3.readthedocs.io/en/latest/reference/services/cloudformation.html#CloudFormation.Client.describe_stack_resources) to get your cluster (this can probably be accomplished only using the ECS client, but ¯\\\_(ツ)\_/¯):
 
-```
+{% highlight python %}
 #!/usr/bin/env python
 # ... some scaffolding & arguments handling, then:
 ECS = boto3.client('ecs')
@@ -68,6 +72,6 @@ response = ECS.run_task(
   }
 )
 print response.get('tasks', [])
-```
+{% endhighlight %}
 
 Notice the `environment` override. That environment variable is passed into the R script which references a model configuration, allowing us to have many models that can happily coexist in 1 framework ☺

@@ -1,7 +1,11 @@
 ---
-layout: default
+layout: post
 title: A Cheap Home Server
-category: 2015
+navigation: True
+categories: Nathan
+subclass: 'post tag-2015'
+tags: 2015
+cover: 'assets/images/windows.jpg'
 ---
 
 ### Preface
