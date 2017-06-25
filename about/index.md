@@ -5,6 +5,7 @@ class: 'post'
 navigation: True
 logo: 'assets/images/ghost.png'
 current: about
+cover: 'assets/images/banner.png'
 ---
 
 Hi there~

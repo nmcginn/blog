@@ -5,6 +5,7 @@ navigation: True
 categories: Nathan
 subclass: 'post tag-2017'
 tags: 2017
+cover: 'assets/images/ubuntu.png'
 ---
 
 ### Managing secure credentials

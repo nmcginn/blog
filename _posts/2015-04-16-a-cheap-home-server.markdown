@@ -5,6 +5,7 @@ navigation: True
 categories: Nathan
 subclass: 'post tag-2015'
 tags: 2015
+cover: 'assets/images/windows.jpg'
 ---
 
 ### Preface

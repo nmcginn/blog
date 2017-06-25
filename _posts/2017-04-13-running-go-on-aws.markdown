@@ -5,6 +5,7 @@ navigation: True
 categories: Nathan
 subclass: 'post tag-2017'
 tags: 2017
+cover: 'assets/images/gocode.png'
 ---
 
 # Running a go service on Amazon ECS

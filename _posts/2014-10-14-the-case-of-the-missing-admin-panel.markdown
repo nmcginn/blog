@@ -5,6 +5,7 @@ navigation: True
 categories: Nathan
 subclass: 'post tag-2014'
 tags: 2014
+cover: 'assets/images/banner.png'
 ---
 
 I was in developer training some weeks ago for Oracle WebCenter Sites, also known as OWS (or "Fatwire"). We went through the process of downloading and installing the OWS Jump Start Kit (JSK). At this point, we thought everyone was ready for training. We open up the web admin interface and log in, at which point the instructor made us all aware of a glaring problem: we were missing the admin panel.
