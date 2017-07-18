@@ -9,6 +9,7 @@ cover: 'assets/images/banner.png'
 ---
 
 ### The Problem
+
 The paradigm for developing internal portal applications in my team was a conventional approach: JSP DynPage web applications. Although this works well for some things, a lot of more modern features (HTML5/CSS3) did not work with this type of application. Out of frustration, I wanted to come up with a new approach for developing portal applications. Wanting to stick with a rough MVC structure, I decided that the best approach would be to serve static content (HTML/CSS/JavaScript) and have the JavaScript call a RESTful web service for serverside duties. Sadly, the SAP portal doesn't have an easy mechanism for creating RESTful web services.
 
 ### The Solution
@@ -19,6 +20,7 @@ When serving static HTML, even the most basic modern features would stop working
 ![URL iView](https://i.imgur.com/7K1HkdB.png)
 
 #### Creating the web service
+
 To create the web service, the best approach appeared to be using an `AbstractPortalComponent`:
 
 {% highlight Java %}
@@ -69,13 +71,17 @@ public abstract JSONObject performDelete(String[] components);
 {% endhighlight %}
     
 ### Perceived Advantages
+
 The SAP Portal has a gigantic scary framework with multiple ways of writing applications. Sometimes, it seems like none of those ways does what you want, and you have to be a little *creative*. So what exactly are the advantages of this whole approach?
 
 #### MVCish separation of duties
+
 The views are for viewing, and the service handles all the heavy lifting. Java classes representing the data all implement an interface with deserializes from a `JSONObject` and serializes to a `JSONObject` which makes shuffling objects from Java and JavaScript a breeze. Having the views just be static content makes them shorter, simpler, and a lot easier to edit without worry.
 
 #### Performance
+
 After profiling my RESTful service, even with calls to Active Directory & SQL, I rarely saw a response take more than 25ms. From the user perspective, the old *no one's used it in a while so let's twiddle our thumbs while the JSP compiles* problem is gone. The longest I've seen a page populate with data using this approach is a fraction of a second, which is a huge improvement over the often multi-second page load.
 
 #### Not having to use SOAP
+
 I believe this is clear enough.

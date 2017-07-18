@@ -8,8 +8,6 @@ tags: 2017
 cover: 'assets/images/ubuntu.png'
 ---
 
-### Managing secure credentials
-
 At work, a coworker and I were having a discussion about managing secure credentials. We typically use environment variables that are in some way or another available at runtime, and he was saying that environment variables seemed a bit loose. The conventional wisdom is that once somebody has shell access, it's game over. Wanting to test this, I decided to explore how easy it would be, once the attacker has root, to get credentials out of an arbitrary process.
 
 ### The test

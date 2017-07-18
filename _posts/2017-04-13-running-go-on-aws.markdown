@@ -8,8 +8,6 @@ tags: 2017
 cover: 'assets/images/gocode.png'
 ---
 
-# Running a go service on Amazon ECS
-
 My organization has recently moved to Amazon ECS for deploying services, and my team uses go as a backend language. In theory, it seems exceptionally straightforward to deploy a go service to ECS, but there were 2 major hurdles in deploying to this new containerized environment that I've never encountered before. The first was related to deploying a binary directly, and the second dealt with credential management specific to our continuous integration.
 
 ### Deploying a go binary to ECS
