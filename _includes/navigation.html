@@ -7,8 +7,9 @@
         <li class="nav-home {% if page.current == 'home' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}">Home</a></li>
         {% assign what_year_is_it = 'now' | date: "%Y" %}
         {% for yr in (2014..what_year_is_it) reversed %}
+        {% assign yr_str = yr | downcase %}
         {% if yr != 2016 %}
-        <li class="nav-{{yr}} {% if page.url contains 'yr' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/{{yr}}">{{yr}}</a></li>
+        <li class="nav-{{yr}} {% if page.url contains yr_str %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/{{yr}}">{{yr}}</a></li>
         {% endif %}
         {% endfor %}
         <li class="nav-author {% if page.current == 'author' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}author/Nathan">About</a></li>
