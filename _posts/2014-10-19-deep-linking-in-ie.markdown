@@ -4,7 +4,8 @@ title: Deep Linking in IE
 navigation: True
 categories: Nathan
 subclass: 'post tag-2014'
-tags: 2014
+tags:
+  - 2014
 cover: 'assets/images/banner.png'
 ---
 

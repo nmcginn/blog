@@ -4,11 +4,10 @@ title: Scalable Data Science - Running R on AWS ECS
 navigation: True
 categories: Nathan
 subclass: 'post tag-2017'
-tags: 2017
-cover: 'assets/images/servers.jpg'
+tags:
+  - 2017
+cover: 'assets/images/banner.png'
 ---
-
-# Scalable Data Science - Running R on AWS ECS
 
 As part of the data science work I do at my company, we run several computationally expensive processes. Most of these processes, like [lsmeans](https://cran.r-project.org/web/packages/lsmeans/lsmeans.pdf), grow dramatically in terms of runtime with larger and larger datasets. As we would like to be able to run a large number of models at once to accelerate our development, we need a way of running these in a scalable fashion. The startup time of new EC2 instances can be slow, so we need a way that we can have very bursty, on-demand compute.
 

@@ -14,7 +14,7 @@ description: "clever tagline here"
 author: 'Nathan McGinn'
 # edit 'categories' in the front matter of every post to match this username
 nickname: Nathan
-bio: 'A software developer, currently working in data science.'
+bio: 'A software developer, currently working in data science.<br>¯\_/(ツ)\_/¯'
 location: 'St. Louis'
 url: 'https://nmcginn.com'
 image: 'assets/images/doge.jpg'
