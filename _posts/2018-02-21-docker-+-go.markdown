@@ -6,7 +6,7 @@ categories: Nathan
 subclass: 'post tag-2018'
 tags:
   - 2018
-cover: 'assets/images/banner.png'
+cover: 'assets/images/docker_go.png'
 ---
 
 # Starting with a great article
