@@ -1,0 +1,70 @@
+---
+layout: post
+title: Docker + Go for Fast, Clean Builds
+navigation: True
+categories: Nathan
+subclass: 'post tag-2018'
+tags:
+  - 2018
+cover: 'assets/images/banner.png'
+---
+
+# Starting with a great article
+
+As someone who loves go, and uses docker as their primary build mechanism,
+Pierre's article [The Go Dockerfile](https://medium.com/@pierreprinetti/the-go-dockerfile-d5d43af9ee3c) was very appealing to me.
+In recent times, I've been using alpine as my base image for go programs out of convenience.
+Prior to this article I wasn't familiar Docker's ability to do multi-stage builds, so this provided a good learning opportunity.
+I had 2 differences to his method though, which I had to resolve before being able to use this build system.
+
+### Glide #1
+
+I don't really have strong opinions about go dependency management,
+but I've used [glide](https://github.com/Masterminds/glide) since I started working with go.
+Going with a tried-and-true installation method, the first few lines of the Dockerfile are straightforward:
+
+```
+FROM golang:1.10 AS builder
+
+ADD https://github.com/Masterminds/glide/releases/download/v0.13.1/glide-v0.13.1-linux-amd64.tar.gz .
+RUN tar -xvf glide-v0.13.1-linux-amd64.tar.gz && \
+  cp linux-amd64/glide /go/bin/ && \
+  rm -rf linux-amd64
+```
+
+The fact that go programs end up being a single statically linked binary makes this easy.
+The next few steps should be pretty close to identical to the original article.
+
+```
+WORKDIR $GOPATH/src/github.com/project/repo
+COPY . ./
+RUN glide up
+RUN env CGO_ENABLED=0 go build
+```
+
+One caveat to this, make sure you have `vendor/` in your `.dockerignore`.
+The first time I went to build this way, I was _accidentally_ successful because my dependencies were already vendored,
+and glide was basically a no-op.
+
+### Deploying Static Content
+
+The last few lines of the Dockerfile define our actual container to be deployed:
+
+```
+FROM scratch
+ENV PORT 8080
+COPY --from=builder /go/src/github.com/project/repo/binary ./
+COPY www/ www/
+CMD ["./binary"]
+```
+
+The only real difference here is the extra `COPY`.
+When deploying APIs with Go, I typically have them self-host a swagger UI page or something along those lines.
+That means I need a way to bundle some minimal HTML/CSS along with the binary itself.
+One of the conveniences from Alpine is the presence of `sh` and `mkdir`,
+so building a container with some pathing is a little easier.
+But having the builder do a little extra file shuffling means we can have a smaller, simpler final image.
+
+So what does the final image look like?
+18MB in total, of which 16MB is the go binary itself.
+And I finally manage to join the `FROM scratch` club :D
