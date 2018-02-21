@@ -68,3 +68,5 @@ But having the builder do a little extra file shuffling means we can have a smal
 So what does the final image look like?
 18MB in total, of which 16MB is the go binary itself.
 And I finally manage to join the `FROM scratch` club :D
+
+Thanks to [the gophers project](https://github.com/egonelbre/gophers) for the free gopher images.
