@@ -25,6 +25,11 @@
     "description": "{{ site.description }}"
 }
     </script>
+    <script>
+        if (location.protocol != 'https:' && location.hostname != 'localhost') {
+            location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+        }
+    </script>
 
     <meta name="generator" content="Jekyll 3.0.0" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.baseurl }}feed.xml" />
