@@ -1,0 +1,11 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - npm install -g showdown@1.9.1
+  build:
+    commands:
+      - scripts/build.sh
+      - aws s3 cp site/ s3://nmcginn.com/ --recursive
