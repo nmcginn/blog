@@ -15,4 +15,4 @@ done
 cp -r assets/ site/
 
 cat index.md site/posts.md > site/index.md
-showdown makehtml -i site/index.md -o site/output.md
+showdown makehtml -i site/index.md -o site/index.html
