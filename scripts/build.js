@@ -18,6 +18,7 @@ posts.forEach(file => {
     const html = marked(content);
     const fullContent = mustache.render(template, { content: html });
     fs.writeFileSync(`site/${file.replace('.md', '.html')}`, fullContent, { encoding: 'utf-8' });
+    console.log(`${file.replace('.md', '.html')} rendered`);
 });
 
 let siteDirectory = '\n\n';
@@ -28,3 +29,4 @@ for (let i = 0; i < posts.length; i++) {
 const index = fs.readFileSync('index.md').toString('utf-8');
 const indexFullContent = mustache.render(template, { content: marked(index + siteDirectory) });
 fs.writeFileSync('site/index.html', indexFullContent, { encoding: 'utf-8' });
+console.log('index.html rendered');
