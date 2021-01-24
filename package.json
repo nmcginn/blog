@@ -1,0 +1,22 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts/template.js",
+  "scripts": {
+    "start": "./scripts/template.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nmcginn/blog.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nmcginn/blog/issues"
+  },
+  "homepage": "https://github.com/nmcginn/blog#readme",
+  "dependencies": {
+    "mustache": "^4.1.0"
+  }
+}

@@ -5,6 +5,7 @@ phases:
       nodejs: 14
     commands:
       - npm install -g showdown@1.9.1
+      - npm install
   build:
     commands:
       - scripts/build.sh
