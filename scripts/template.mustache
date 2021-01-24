@@ -14,7 +14,20 @@
         @media screen and (prefers-color-scheme: dark) {
             :root {
                 background-color: #232323;
-                color: #D0D0D0;
+                color: #d0d0d0;
+            }
+            a:link, a:hover {
+                color: #6495ed;
+            }
+            a:active, a:visited {
+                color: #a37af9;
+            }
+            img {
+                opacity: 0.75;
+                transition: opacity .5s ease-in-out;
+            }
+            img:hover {
+                opacity: 1;
             }
         }
     </style>
