@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nmcginn/blog#readme",
   "dependencies": {
+    "marked": "^1.2.7",
     "mustache": "^4.1.0"
   }
 }
