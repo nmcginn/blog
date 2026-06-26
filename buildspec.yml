@@ -9,3 +9,4 @@ phases:
     commands:
       - scripts/build.js
       - aws s3 cp site/ s3://nmcginn.com/ --recursive
+      - aws s3 cp assets/static/mcginn-1985-dissertation.html s3://nmcginn.com/dissertation/index.html

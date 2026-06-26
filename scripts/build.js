@@ -11,7 +11,7 @@ fs.mkdirSync('site/blog/');
 
 const template = fs.readFileSync('scripts/template.mustache').toString('utf-8');
 
-const posts = fs.readdirSync('posts/').filter(file => file.endsWith('.md')).reverse();
+const posts = fs.readdirSync('posts/').filter(file => file.endsWith('.md') && file !== 'index.md').reverse();
 const titles = [];
 posts.forEach(file => {
     const content = fs.readFileSync(`posts/${file}`).toString('utf-8');
@@ -27,7 +27,7 @@ for (let i = 0; i < posts.length; i++) {
     siteDirectory += `- [${titles[i]}](${posts[i].replace('.md', '.html')})\n`;
 }
 
-const index = fs.readFileSync('index.md').toString('utf-8');
+const index = fs.readFileSync('posts/index.md').toString('utf-8');
 const indexFullContent = mustache.render(template, { content: marked.parse(index + siteDirectory) });
 fs.writeFileSync('site/blog/index.html', indexFullContent, { encoding: 'utf-8' });
 console.log('blog/index.html rendered');
