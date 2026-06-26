@@ -79,7 +79,7 @@ mjx-container svg{max-width:100%;height:auto;vertical-align:middle}
 
 /* ---------- mobile ---------- */
 @media(max-width:900px){
-  #toc{position:static;width:auto;height:auto;border-right:none;border-bottom:1px solid var(--rule)}
+  #toc{position:sticky;top:0;z-index:60;background:#f3f1ea;width:auto;height:auto;border-right:none;border-bottom:1px solid var(--rule);box-shadow:0 4px 10px rgba(0,0,0,.08)}
   #toc>summary{display:block;cursor:pointer;list-style:none;padding:.85rem 1.1rem;
      font:600 .9rem/1 -apple-system,Segoe UI,sans-serif;color:var(--asb-navy);background:#f3f1ea}
   #toc>summary::-webkit-details-marker{display:none}
@@ -108,7 +108,7 @@ mjx-container svg{max-width:100%;height:auto;vertical-align:middle}
 }
 
 /* ---------- overflow hardening (mobile) ---------- */
-html,body{overflow-x:hidden;max-width:100%}
+html,body{overflow-x:clip;max-width:100%}
 .tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.2rem 0}
 .tablewrap table{margin:0}
 mjx-container[display="true"]{min-width:0!important;max-width:100%}
@@ -2683,5 +2683,5 @@ p. 203
 
 <footer class="sitefoot">Digitized from the original 1985 typescript. Original page numbers are shown in the margin.</footer>
 </main>
-</body>
+<script>(function(){var t=document.getElementById("toc");function s(){t.open=window.matchMedia("(min-width:901px)").matches;}s();addEventListener("resize",s);t.addEventListener("click",function(e){if(e.target.closest("a")&&!window.matchMedia("(min-width:901px)").matches){t.open=false;}});})();</script></body>
 </html>
