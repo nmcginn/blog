@@ -8,6 +8,12 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
         }
+        nav {
+            font-size: 0.9em;
+            margin-bottom: 2em;
+            color: #888;
+        }
+        nav a { margin-right: 1em; }
         img {
             max-width: 95%;
         }
@@ -32,10 +38,14 @@
             img:hover {
                 opacity: 1;
             }
+            nav {
+                color: #666;
+            }
         }
     </style>
 </head>
 <body>
+<nav><a href="/">home</a> <a href="/blog">blog</a></nav>
 {{{ content }}}
 </body>
 </html>

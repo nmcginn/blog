@@ -7,6 +7,7 @@ const mustache = require('mustache');
 if (fs.existsSync('site/'))
     fs.rmSync('site/', { recursive: true });
 fs.mkdirSync('site/');
+fs.mkdirSync('site/blog/');
 
 const template = fs.readFileSync('scripts/template.mustache').toString('utf-8');
 
@@ -17,8 +18,8 @@ posts.forEach(file => {
     titles.push(content.substring(2, content.indexOf('\n')));
     const html = marked.parse(content);
     const fullContent = mustache.render(template, { content: html });
-    fs.writeFileSync(`site/${file.replace('.md', '.html')}`, fullContent, { encoding: 'utf-8' });
-    console.log(`${file.replace('.md', '.html')} rendered`);
+    fs.writeFileSync(`site/blog/${file.replace('.md', '.html')}`, fullContent, { encoding: 'utf-8' });
+    console.log(`blog/${file.replace('.md', '.html')} rendered`);
 });
 
 let siteDirectory = '\n\n';
@@ -28,5 +29,9 @@ for (let i = 0; i < posts.length; i++) {
 
 const index = fs.readFileSync('index.md').toString('utf-8');
 const indexFullContent = mustache.render(template, { content: marked.parse(index + siteDirectory) });
-fs.writeFileSync('site/index.html', indexFullContent, { encoding: 'utf-8' });
+fs.writeFileSync('site/blog/index.html', indexFullContent, { encoding: 'utf-8' });
+console.log('blog/index.html rendered');
+
+const landing = fs.readFileSync('scripts/landing.html').toString('utf-8');
+fs.writeFileSync('site/index.html', landing, { encoding: 'utf-8' });
 console.log('index.html rendered');
