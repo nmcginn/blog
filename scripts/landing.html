@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Nathan McGinn</title>
@@ -12,44 +13,99 @@
             padding: 0 1.5em;
             line-height: 1.6;
         }
-        h1 { margin-bottom: 0.2em; }
-        .tagline { color: #666; margin-top: 0; margin-bottom: 2.5em; }
-        h2 { border-bottom: 1px solid #ddd; padding-bottom: 0.3em; }
-        .projects { list-style: none; padding: 0; }
-        .projects li { margin: 1.25em 0; }
-        .projects a { font-weight: bold; font-size: 1.05em; }
-        .desc { display: block; color: #555; font-size: 0.9em; margin-top: 0.15em; }
-        .soon { font-weight: bold; font-size: 1.05em; opacity: 0.45; }
+
+        h1 {
+            margin-bottom: 0.2em;
+        }
+
+        .tagline {
+            color: #666;
+            margin-top: 0;
+            margin-bottom: 2.5em;
+        }
+
+        h2 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.3em;
+        }
+
+        .projects {
+            list-style: none;
+            padding: 0;
+        }
+
+        .projects li {
+            margin: 1.25em 0;
+        }
+
+        .projects a {
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+
+        .desc {
+            display: block;
+            color: #555;
+            font-size: 0.9em;
+            margin-top: 0.15em;
+        }
+
+        .soon {
+            font-weight: bold;
+            font-size: 1.05em;
+            opacity: 0.45;
+        }
+
         @media screen and (prefers-color-scheme: dark) {
-            :root { background-color: #232323; color: #d0d0d0; }
-            a:link, a:hover { color: #6495ed; }
-            a:active, a:visited { color: #a37af9; }
-            h2 { border-bottom-color: #444; }
-            .tagline, .desc { color: #999; }
+            :root {
+                background-color: #232323;
+                color: #d0d0d0;
+            }
+
+            a:link,
+            a:hover {
+                color: #6495ed;
+            }
+
+            a:active,
+            a:visited {
+                color: #a37af9;
+            }
+
+            h2 {
+                border-bottom-color: #444;
+            }
+
+            .tagline,
+            .desc {
+                color: #999;
+            }
         }
     </style>
 </head>
+
 <body>
-<h1>Nathan McGinn</h1>
-<p class="tagline">Software developer &amp; researcher.</p>
-<h2>Projects</h2>
-<ul class="projects">
-    <li>
-        <a href="https://github.com/nmcginn/spookyweather">Spooky Weather</a>
-        <span class="desc">Weather forecasts, spookified.</span>
-    </li>
-    <li>
-        <a href="https://github.com/nmcginn/kanji-study">Kanji Study</a>
-        <span class="desc">A flashcard tool for studying Japanese kanji.</span>
-    </li>
-    <li>
-        <span class="soon">PhD Dissertation</span>
-        <span class="desc">Coming soon.</span>
-    </li>
-    <li>
-        <a href="/blog">Blog</a>
-        <span class="desc">Writing on software, systems, and adjacent topics.</span>
-    </li>
-</ul>
+    <h1>Nathan McGinn</h1>
+    <p class="tagline">Software engineer extraordinaire.</p>
+    <h2>Some recent projects</h2>
+    <ul class="projects">
+        <li>
+            <a href="https://spookyweather.pages.dev/">Spooky Weather</a>
+            <span class="desc">For when the weather outside is spooky.</span>
+        </li>
+        <li>
+            <a href="https://nmcginn.github.io/kanji-study/">Kanji Study</a>
+            <span class="desc">A tool for studying Japanese kanji in hybrid JLPT/RTK order.</span>
+        </li>
+        <li>
+            <span class="soon">PhD Dissertation</span>
+            <span class="desc">Using Claude's OCR to publish my late father's PhD dissertation.</span>
+        </li>
+        <li>
+            <a href="/blog">Legacy Blog</a>
+            <span class="desc">My old feeble attempt at blogging.</span>
+        </li>
+    </ul>
 </body>
+
 </html>
